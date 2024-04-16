@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function fetchData() {
         infoTxt.innerText = "Getting weather details...";
         infoTxt.classList.add("pending");
-
+    
         fetch(api)
             .then((res) => {
                 if (!res.ok) {
@@ -75,6 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     errorImg.src = "assest/404.png"; // Path to your 404 error image
                     errorImg.alt = "City not found";
                     infoTxt.appendChild(errorImg);
+    
+                    // Add text above the 404 image
+                    const errorText = document.createElement("div");
+                    
+                    infoTxt.insertBefore(errorText, errorImg);
+    
                     throw new Error("City not found");
                 }
                 return res.json();
@@ -87,9 +93,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 errorImg.src = "assest/404.png"; // Path to your 404 error image
                 errorImg.alt = "Error Image";
                 infoTxt.appendChild(errorImg);
+    
+                // Add text above the 404 image
+                const errorText = document.createElement("div");
+             
+                infoTxt.insertBefore(errorText, errorImg);
+    
                 console.error("Error fetching data:", error);
             });
     }
+    
 
     function weatherDetails(info) {
         if (info.cod === 200) {
