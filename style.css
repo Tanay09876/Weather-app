@@ -253,3 +253,14 @@ header i{
   background-color:black;
 }
 
+@media (max-width:800px){
+  .wrapper {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+}
+}
