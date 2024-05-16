@@ -22,7 +22,9 @@ body{
   max-width: 800px;
   width: 100%;
   border-radius: 25px;
-
+  align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 
